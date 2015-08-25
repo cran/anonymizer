@@ -1,0 +1,13 @@
+65e5c55201b627ccab06512eb53496ff *DESCRIPTION
+a7eededba9795247019b813c8be54c65 *LICENSE
+5d2eecf535f4ffb53fbad31025487965 *NAMESPACE
+55535736d77742177af167eef8079aa8 *R/anonymize.R
+a603f944d6dbc73c42347b43f9b0f204 *R/anonymizer.R
+2d33e2b957f3c65c5c5224666677ca30 *R/salt.R
+08866523dfaf7297fb46f72f14dcdba7 *README.md
+37102db035af5537e890d058161bcb44 *man/anonymize.Rd
+24a8e614665c5ac06bc9dcecfb7c5f85 *man/anonymizer.Rd
+a9e0ba80b2068b05fab9b0ddf9eb3ff0 *man/salt.Rd
+e2e626d9d39750ca34586fb9a1bf244e *tests/testthat.R
+ae6bfd7cf92fe0b7c4014512d247f22a *tests/testthat/test-anonymize.R
+0643c7dbd9079d99046200ff191b9aac *tests/testthat/test-salt.R
