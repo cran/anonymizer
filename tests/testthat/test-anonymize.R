@@ -1,9 +1,8 @@
 library(anonymizer)
 context("anonymize()")
 
-set.seed(1)
 test_that("Produces the correct output.", {
-  expect_equal(anonymize("a"), "fb1a678ef965ad4a66c712d2161f20319091cb4e7611e1925df671018c833f72")
+  expect_equal(anonymize("a", .seed = 1), "ed879445e47969394b3f8eb818501976bed22b9ab0e7f7c5fdf2a96df0aec80e")
 })
 
 test_that("Produces the correct output type.", {

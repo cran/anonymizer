@@ -4,10 +4,12 @@
 \alias{salt}
 \title{Salt a vector.}
 \usage{
-salt(.x, .chars = letters, .n_chars = 5L)
+salt(.x, .seed = NULL, .chars = letters, .n_chars = 5L)
 }
 \arguments{
 \item{.x}{a vector.}
+
+\item{.seed}{an integer to seed the random number generator.}
 
 \item{.chars}{set of characters to salt with.}
 
@@ -17,9 +19,24 @@ salt(.x, .chars = letters, .n_chars = 5L)
 A salted version of the vector.
 }
 \description{
-Salt a vector.
+\code{salt} takes a vector \code{.x} and returns a salted version of it.
+The algorithm for salting a vector is:
+\enumerate{
+  \item Select a random sample of characters of length \code{.n_chars} from \code{.chars}. Call this random sample \code{.y}.
+  \item Concatenate \code{.y}, the vector \code{.x}, and \code{.y} again in a vectorized fashion.
+}
+}
+\details{
+The user is advised to check out \href{https://en.wikipedia.org/wiki/Salt_\%28cryptography\%29}{Wikipedia} for more information.
 }
 \examples{
-# Examples
+# Use various number of characters
+salt(letters, .n_chars = 0L)
+salt(letters, .n_chars = 1L)
+salt(letters, .n_chars = 5L)
+salt(letters)
+
+# Use other sets of characters to salt with
+salt(letters, .chars = letters[1:2])
 }
 

@@ -4,20 +4,35 @@
 \alias{anonymize}
 \title{Anonymize a vector.}
 \usage{
-anonymize(.x, .algo = "sha256")
+anonymize(.x, .algo = "sha256", .seed = 0, .chars = letters,
+  .n_chars = 5L, ...)
 }
 \arguments{
 \item{.x}{a vector.}
 
 \item{.algo}{the name of the algorithm.}
+
+\item{.seed}{an integer to seed the random number generator.}
+
+\item{.chars}{set of characters to salt with.}
+
+\item{.n_chars}{an integer; number of characters to salt with.}
+
+\item{...}{additional arguments to be based to \code{hash}.}
 }
 \value{
-An anonymized version of the data object.
+An anonymized version of the vector.
 }
 \description{
-Anonymize a vector.
+\code{anonymize} anonymizes a vector \code{.x} by first salting it with
+ \code{\link{salt}} and then hashing it with \code{\link{hash}}. See
+ both functions for additional documentation.
+}
+\details{
+The user is advised to check out \href{https://en.wikipedia.org/wiki/Data_anonymization}{Wikipedia} for more information.
 }
 \examples{
-# Examples
+set.seed(1)
+anonymize(letters)
 }
 
